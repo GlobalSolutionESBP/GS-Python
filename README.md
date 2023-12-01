@@ -86,8 +86,7 @@ Pelo fato dos prontuários médicos ainda não serem digitais na grande parte do
   <p>Ao escolher a opção 2, processa a função 'buscar_paciente()';</p>
   <p> Ao escolher a opção 3, encerra o menu do prontuário.</p>
   </p>
-  
-
+ </details> 
 
 <details>
 <summary>Link Youtube</summary>

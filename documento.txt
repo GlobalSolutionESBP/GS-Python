@@ -1,0 +1,27 @@
+Documentação Código
+
+Função 'def cadastrar_paciente()":
+- Solicita informações como nome, CPF, idade, altura, peso e sintomas;
+- Realiza validações para garantir a entrada correta dos dados; 
+- Cria um prontuário com as informações e adiciona à lista 'prontuários';
+- Exibe uma mensagem que o cadastro foi feito com sucesso. 
+- Retorna a lista 'prontuários' atualizada com o novo prontuário cadastrado;
+
+
+Função 'def buscar_paciente()':
+- Solicita o nome do paciente a ser buscado; 
+- Verifica se o paciente está na lista 'prontuários';
+- Em caso afirmativo, exibe o prontuário do paciente;
+- Em caso negativo, informa que o paciente não foi encontrado.
+
+
+Menu Principal: 
+Exibe as opções: 
+1. Cadastrar Paciente
+2. Buscar Paciente
+3. Sair 
+- Solicita ao usuário escolher uma das opções. 
+-- Ao escolher a opção 1, processa a função 'cadastrar_paciente()' acontecerá; 
+-- Ao escolher a opção 2, processa a função 'buscar_paciente()';
+-- Ao escolher a opção 3, encerra o menu do prontuário.
+

@@ -1,4 +1,4 @@
-prontuarios = {}
+prontuarios = []
 
 def cadastrar_paciente():
     nome = input("Digite o nome do paciente: ")
@@ -26,14 +26,14 @@ def cadastrar_paciente():
 
 
     # Cria um prontuário para o paciente
-    prontuario = {"Nome": nome, "CPF": CPF, "Idade": idade, "Sintomas": sintomas, "altura": altura, "peso": peso}
+    prontuario = [nome,  CPF, idade, altura, peso, sintomas]
 
-    # Adiciona o prontuário ao dicionário
-    prontuarios[nome] = prontuario
-
+    # Adiciona o prontuário a lista
+    prontuarios.append(prontuario)
     print("Paciente cadastrado com sucesso!")
     return prontuarios
 
+#deixamos a parte do imc para uma próxima fase.
 '''def calcular_imc(prontuarios):
    imc = prontuarios["peso"] / (prontuarios["altura"] ** 2)
     return imc
@@ -56,22 +56,23 @@ def cadastrar_paciente():
 def buscar_paciente():
     nome = input("Digite o nome do paciente a ser buscado: ")
 
-    # Verifica se o paciente está no dicionário
-    if nome in prontuarios:
-        prontuario = prontuarios[nome]
-        '''imc = calcular_imc(prontuarios[nome])'''
-        '''status_imc = avaliar_imc(prontuarios[nome])'''
-        print("Prontuário encontrado:")
-        print("Nome:", prontuario["Nome"])
-        print("Idade:", prontuario["Idade"])
-        print("Altura:", prontuario["altura"], "cm")
-        print("Peso:", prontuario["peso"],"kg")
-        print("Sintomas:", prontuario["Sintomas"])
-        '''print("imc:", imc, "Status IMC", status_imc)'''
+    # Verifica se o paciente está na lista
+    for prontuario in prontuarios:
+        if prontuario[0] == nome:
+            '''imc = calcular_imc(prontuarios[nome])'''
+            '''status_imc = avaliar_imc(prontuarios[nome])'''
+            print("Prontuário encontrado:")
+            print(f"Nome: {prontuario[0]}")
+            print(f"CPF: {prontuario[1]}")
+            print(f"Idade:, {prontuario[2]}")
+            print(f"Altura: prontuario[3] cm")
+            print(f"Peso: {prontuario[4]} kg")
+            print(f"Sintomas: {prontuario[5]}")
+            '''print("imc:", imc, "Status IMC", status_imc)'''
 
     else:
         print("Paciente não encontrado.")
-
+    return prontuarios 
 
 # Menu principal
 while True:
@@ -81,7 +82,7 @@ while True:
     print("2. Buscar Paciente")
     print("3. Sair")
 
-    opcao = input("Escolha uma opção (1/2/3): ")
+    opcao = input("Escolha uma opção (1 ou 2 ou 3): ")
 
     if opcao == "1":
         cadastrar_paciente()
